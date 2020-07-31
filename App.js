@@ -1,3 +1,4 @@
+// Koesnij Github
 import {Alert, TouchableOpacity} from 'react-native';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -25,7 +26,7 @@ export default class extends Component {
   getLocation = async() => {
     try {
       await Location.requestPermissionsAsync(); // 요청만 해주면 됨.
-      
+
       const {
         coords : { latitude, longitude }
       } = await Location.getCurrentPositionAsync();
@@ -45,8 +46,8 @@ export default class extends Component {
   render() {
     const { isLoading, temp, condition } = this.state;
     return (
-      isLoading ? 
-        <Loading /> : 
+      isLoading ?
+        <Loading /> :
         <Weather temp={Math.round(temp)} condition={condition}/>
     ); // 이런 식으로 인자를 넘겨준다
   }
